@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+  font-family: 'Helvetica Neue', sans-serif;
+  background-color: #FAEBD7;
+  color: #333;
+}
+
+.page {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: row-reverse;
+}
+
+/* Sidebar */
+.sidebar {
+  flex: 3;
+  width: 220px;
+  padding: 20px;
+  margin-top: 90px;
+  font-size: 20px;
+  font-family: 'Libre Baskerville', serif;
+  font-style: italic;
+}
+
+.sidebar h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 10px 0;
+}
+
+.sidebar a {
+  color: #333;
+  text-decoration: none;
+  transition: all 0.2s ease; /* smooth animation */
+}
+
+.sidebar a:hover {
+  text-decoration: none;       
+  font-size: 26px;              /* slightly larger */
+  color: #000;                  /* optional: darker on hover */
+  letter-spacing: 0.5px;        /* optional: more refined look */
+  cursor: pointer;              /* optional: clearer interaction cue */
+}
+
+/* Main content */
+.content {
+  flex: 7;
+  padding: 40px;
+  font-size: 18px;
+}
+
+.content h1 {
+  font-size: 60px;
+  margin-bottom: 10px;
+  font-family: 'Libre Baskerville', serif;
+  font-style: italic;
+}
+
+.content section {
+  margin-bottom: 40px;
+}
+
+.highlight {
+  font-size: 20px;
+  font-family: 'Libre Baskerville', serif;
+  font-style: italic;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.highlight:hover {
+  text-decoration: none;       
+  cursor: pointer;
+}
