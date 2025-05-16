@@ -45,7 +45,7 @@ body {
 .sidebar a:hover {
   text-decoration: none;       
   font-size: 26px;              /* slightly larger */
-  color: #000;                  /* optional: darker on hover */
+  color: #27548A;;                 
   letter-spacing: 0.5px;        /* optional: more refined look */
   cursor: pointer;              /* optional: clearer interaction cue */
 }
@@ -79,4 +79,5 @@ body {
 .highlight:hover {
   text-decoration: none;       
   cursor: pointer;
+  color: #27548A;
 }
