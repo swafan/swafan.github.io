@@ -1,30 +1,128 @@
 <head>
-  <meta charset="UTF-8" />
-  <title>Your Site</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alvin's Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Corinthia&display=swap" rel="stylesheet" />
 </head>
+<body>
+  <div class="page">
 
-<div class="page">
+    <aside class="sidebar" role="navigation">
+      <nav>
+        <ul>
+          <li><a href="#intro">Introduction</a></li>
+          <li><a href="#writings">Fiction</a></li>
+          <li><a href="#projects">Philosophy</a></li>
+          <li><a href="#contact">Resume</a></li>
+        </ul>
+      </nav>
+    </aside>  
 
-<aside class="sidebar">
-  <ul>
-    <li><a href="index.html">Introduction</a></li>
-    <li><a href="writings.html">Writings</a></li>
-    <li><a href="projects.html">Projects</a></li>
-    <li><a href="me.html">More About Me</a></li>
-  </ul>
-</aside>   
-  
- <main class="content">
-    <section id="intro">
-      <h1>Hi there, I'm Alvin.</h1>
-      <p>I spend a lot of time on the internet thinking about <span class="highlight"> philosophy</span>, <span class="highlight"> new technologies</span>, <span class="highlight">short stories</span>, and <span class="highlight">education.</span> Let me show you around.</p>
-    </section>
+    <main class="content">
 
-</main>
+      <section id="intro">
+        <h1 class="intro-heading">Hi there, I'm Alvin.</h1>
+        <p>I spend a lot of time on the internet thinking about <span class="highlight">philosophy</span>, <span class="highlight">new technologies</span>, <span class="highlight">short stories</span>, and <span class="highlight">education</span>. Let me show you around.</p>
+      </section>  
 
-  
+      <section id="writings">
+        <h2>Writings</h2>
+
+        <div class="filter-buttons" role="group" aria-label="Filter Writings">
+          <button data-filter="all" class="active">All</button>
+          <button data-filter="fiction">Fiction</button>
+          <button data-filter="philosophy">Philosophy</button>
+          <button data-filter="memoir">Memoir</button>
+        </div>
+
+        <section class="writings">
+          <article class="writing-box" data-categories="fiction philosophy">
+            <header>
+              <h3>What is it like to be a meat?</h3>
+              <div class="tags">
+                <span class="tag">Fiction</span>
+                <span class="tag">Philosophy</span>
+              </div>
+            </header>
+            <p class="description">Speculative philosophical fiction inspired by Thomas Nagel and Terry Bison. A transcript of a symposium between AI units set in a post-human world. Themes of recursion, consciousness, and phenomenology.</p>
+            <footer class="box-footer">
+              <div class="button-group">
+                <a class="button" href="What Is It Like to Be a Meat.pdf" download>Download PDF</a>
+                <a class="button-substack" href="https://swafan.substack.com/p/what-is-it-like-to-be-a-meat" target="_blank">Read on Substack</a>
+              </div>
+            </footer>
+          </article>
+
+          <article class="writing-box" data-categories="philosophy">
+            <header>
+              <h3>"Good Enough" Epistemology and Relevant Goals Contextualism?</h3>
+              <div class="tags">
+                <span class="tag">Philosophy</span>
+              </div>
+            </header>
+            <p class="description">Abridged version of a 120-page honors philosophy thesis that proposes a novel form of epistemic contextualism by linking insights from Edward Craig and contemporary epistemology.</p>
+            <footer class="box-footer">
+              <div class="button-group">
+                <a class="button" href="Placeholder.pdf" download>Download PDF</a>
+              </div>
+            </footer>
+          </article>
+        </section>
+      </section>
+
+      <section id="projects">
+        <h2>Projects</h2>
+
+        <article class="writing-box">
+          <header>
+            <h3>Random Forest Index Futures Forecaster</h3>
+          </header>
+          <p class="description">Built a prototype classification model in Python using Bloomberg API data to forecast directional movement (up/down/flat) of Southeast Asian index futures based on features like volatility and volume. Initial tests showed ~80% directional accuracy on historical data, though likely subject to overfitting. Created during a summer internship on the equities desk at a bulge bracket investment bank. After I returned to university, the model was further refined and used by the trader desk-head in live decision-making.</p>
+          <footer class="box-footer">
+            <p>Technologies: Python, VBA</p>
+          </footer>
+        </article>
+      </section>
+
+      <section id="contact">
+        <h2>My Socials & Contact</h2>
+<div class="social-links">
+  <a href="https://www.linkedin.com/in/shu-wai-alvin-fan/" target="_blank" aria-label="LinkedIn" class="social-icon">
+    <i class="fab fa-linkedin"></i>
+  </a>
+  <a href="https://swafan.substack.com" target="_blank" aria-label="Substack" class="social-icon">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="substack-svg" aria-hidden="true">
+      <rect width="100" height="100" rx="15"/>
+      <path fill="#fff" d="M20 25h60v10H20zM20 42.5h60V70L70 55l-10 10-10-10-10 10-10-10z"/>
+    </svg>
+  </a>
+  <a href="mailto:alvin.shuwai@gmail.com? target="_blank" aria-label="LinkedIn" class="social-icon">
+    <i class="fas fa-envelope"></i>
+  </a>
 </div>
 
 
-<script src="script.js"></script>
+
+  <p>Interested to learn more about me? Leave your details and I’ll get back to you.</p>
+
+  <form action="mailto:alvin.shuwai@gmail.com?subject=Nice%20to%20meet%20you!" method="POST" enctype="text/plain">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+    </main>
+  </div>
+</body>
+</html>
