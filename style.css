@@ -1,80 +1,63 @@
 body {
   margin: 0;
-  font-family: 'Helvetica Neue', sans-serif;
-  background-color: #FAEBD7;
+  font-family: "Helvetica Neue", sans-serif;
+  background-color: #faebd7;
   color: #333;
 }
 
 .page {
   display: flex;
+  flex-direction: column;
   min-height: 100vh;
-  flex-direction: row-reverse;
 }
 
-/* Sidebar */
-.sidebar {
-  flex: 3;
-  width: 220px;
-  padding: 20px;
-  margin-top: 90px;
-  font-size: 20px;
-  font-family: 'Libre Baskerville', serif;
-  font-style: italic;
+.nav {
+  text-align: center;
+  padding: 30px 0;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
 }
 
-.sidebar h2 {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-}
-
-.sidebar li {
-  margin: 10px 0;
-}
-
-.sidebar a {
-  color: #333;
+.nav a {
+  margin: 0 20px;
+  color: #444;
   text-decoration: none;
-  transition: all 0.2s ease; /* smooth animation */
+  transition: color 0.3s;
 }
 
-.sidebar a:hover {
-  text-decoration: none;       
-  font-size: 26px;              /* slightly larger */
-  color: #27548A;;                 
-  letter-spacing: 0.5px;        /* optional: more refined look */
-  cursor: pointer;              /* optional: clearer interaction cue */
+.nav a:hover {
+  color: #e67635;
 }
-
-.content .intro-heading {
-      font-family: 'Corinthia', cursive;
-      font-size: 4.5rem;
-      font-weight: 400;
-      margin-bottom: 0.5rem;
-    }
 
 /* Main content */
 .content {
-  flex: 7;
-  padding: 40px;
   font-size: 18px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.content .intro-heading {
+  margin-top: 0;
+  font-family: "Caveat", cursive;
+  font-size: 6rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  text-align: center;
 }
 
 .content h1 {
   font-size: 60px;
   margin-bottom: 10px;
-  font-family: 'Libre Baskerville', serif;
+  font-family: "Libre Baskerville", serif;
   font-style: italic;
 }
 
 .content h2 {
   font-size: 32px;
   margin-bottom: 10px;
-  font-family: 'Libre Baskerville', serif;
+  font-family: "Libre Baskerville", serif;
   font-style: italic;
 }
 
@@ -84,21 +67,21 @@ body {
 
 .highlight {
   font-size: 20px;
-  font-family: 'Libre Baskerville', serif;
+  font-family: "Libre Baskerville", serif;
   font-style: italic;
   font-weight: bold;
   transition: all 0.2s ease;
 }
 
 .highlight:hover {
-  text-decoration: none;       
+  text-decoration: none;
   cursor: pointer;
-  color: #27548A;
+  color: #27548a;
 }
 
 .stories-page {
   padding: 40px;
-  font-family: 'Helvetica Neue', sans-serif;
+  font-family: "Helvetica Neue", sans-serif;
 }
 
 .story-container {
@@ -107,23 +90,25 @@ body {
   gap: 20px; /* space between boxes */
 }
 
-.story-box, .writing-box {
+.story-box,
+.writing-box {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   min-height: 360px;
   border-radius: 16px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.story-box:hover, .writing-box:hover {
+.story-box:hover,
+.writing-box:hover {
   transform: translateY(-4px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
 }
 .story-box h2 {
   margin-top: 0;
-  font-family: 'Libre Baskerville', serif;
+  font-family: "Libre Baskerville", serif;
   font-style: italic;
 }
 
@@ -138,7 +123,7 @@ body {
 }
 
 .quote {
-  font-family: 'Libre Baskerville', serif;
+  font-family: "Libre Baskerville", serif;
   font-style: italic;
   font-size: 22px;
   margin: 40px 0;
@@ -155,7 +140,7 @@ body {
   display: flex;
   gap: 10px;
   margin-bottom: 30px;
-  flex-wrap:flex;
+  flex-wrap: flex;
 }
 
 .filter-buttons button {
@@ -188,20 +173,20 @@ body {
   padding: 20px;
   border-radius: 10px;
   background-color: #fefefe;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
   height: 100%; /* Ensures full height for consistent layout */
   margin: 0 0 20px;
 }
 
-.writing-box h3{
+.writing-box h3 {
   margin: 0 0 10px;
 }
 
-.box-content{
+.box-content {
   flex-grow: 1;
 }
 
-.box-footer{
+.box-footer {
   margin-top: 20px;
 }
 
@@ -227,7 +212,7 @@ body {
   display: inline-block;
   margin-top: 10px;
   padding: 8px 12px;
-  background-color: #FF7731;
+  background-color: #ff7731;
   color: white;
   text-decoration: none;
   border-radius: 4px;
@@ -252,9 +237,9 @@ body {
   text-transform: uppercase;
 }
 
-.description{
+.description {
   margin: 10;
-  flex-grow:1;
+  flex-grow: 1;
 }
 
 /* Contact section */
@@ -330,7 +315,7 @@ form button:hover {
 }
 
 .social-icon:hover {
-  color: #FF6719; /* Substack orange as hover color for both */
+  color: #ff6719; /* Substack orange as hover color for both */
 }
 
 .social-icon i {
@@ -342,4 +327,29 @@ form button:hover {
   height: 32px;
   fill: currentColor;
   display: block;
+}
+
+.footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: #f9f9f9;
+  font-size: 0.9rem;
+  color: #555;
+  border-top: 1px solid #eee;
+}
+
+.footer-links {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+  color: #555;
+  text-decoration: none;
+  margin: 0 8px;
+  transition: color 0.3s, text-decoration 0.3s;
+}
+
+.footer-links a:hover {
+  color: #e67635; /* Your accent color */
+  text-decoration: underline;
 }
