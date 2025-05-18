@@ -52,7 +52,7 @@ body {
 
 .content .intro-heading {
       font-family: 'Corinthia', cursive;
-      font-size: 4rem;
+      font-size: 4.5rem;
       font-weight: 400;
       margin-bottom: 0.5rem;
     }
@@ -107,17 +107,20 @@ body {
   gap: 20px; /* space between boxes */
 }
 
-.story-box {
-  flex: 1 1 30%; /* flex-grow: 1, flex-shrink: 1, flex-basis: 45% */
-  min-width: 300px;
-  max-width: 100%;
-  background-color: #ffffff;
-  border: 1px solid #ccc;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+.story-box, .writing-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 360px;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
+.story-box:hover, .writing-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+}
 .story-box h2 {
   margin-top: 0;
   font-family: 'Libre Baskerville', serif;
@@ -146,15 +149,6 @@ body {
   font-size: 16px;
   margin-top: 10px;
   font-style: normal;
-}
-
-.philo-box {
-  border: 1px solid #ccc;
-  padding: 20px;
-  margin: 20px 0;
-  border-radius: 10px;
-  background-color: #fefefe;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
 .filter-buttons {
