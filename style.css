@@ -1,3 +1,7 @@
+html{
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: "Helvetica Neue", sans-serif;
@@ -32,19 +36,22 @@ body {
 /* Main content */
 .content {
   font-size: 18px;
+/*
   padding-top: 20px;
   padding-bottom: 20px;
   padding-left: 40px;
   padding-right: 40px;
+*/
 }
 
 .content .intro-heading {
   margin-top: 0;
   font-family: "Caveat", cursive;
   font-size: 6rem;
-  font-weight: 400;
+  font-weight: 800;
   margin-bottom: 0.5rem;
   text-align: center;
+  
 }
 
 .content h1 {
@@ -62,7 +69,7 @@ body {
 }
 
 .content section {
-  margin-bottom: 40px;
+  padding: 80px 40px;
 }
 
 .highlight {
@@ -328,14 +335,31 @@ form button:hover {
   fill: currentColor;
   display: block;
 }
+.section-intro {
+  background-color: #FAEBD7; /* antique white */
+  padding: 80px 40px;
+}
+
+.section-writings {
+  background-color: #F5F5F5; /* soft gray */
+  padding: 80px 40px;
+}
+
+.section-projects {
+  background-color: #FFF8DC; /* light cream */
+  padding: 80px 40px;
+}
+
+.section-contact {
+  background-color: #E6F2FF; /* pale blue */
+  padding: 80px 40px;
+}
 
 .footer {
+  background-color: #DCDCDC;
   text-align: center;
-  padding: 2rem 1rem;
-  background-color: #f9f9f9;
+  padding: 40px 20px;
   font-size: 0.9rem;
-  color: #555;
-  border-top: 1px solid #eee;
 }
 
 .footer-links {
