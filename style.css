@@ -4,7 +4,8 @@ html{
 
 body {
   margin: 0;
-  font-family: "Helvetica Neue", sans-serif;
+  font-family: 'inter', sans-serif;
+  font-weight: 100;
   background-color: #faebd7;
   color: #333;
 }
@@ -54,18 +55,34 @@ body {
   
 }
 
+.content .tagline{
+  font-size: 1.125rem;
+  text-align: center;
+  font-family: 'DM Serif Display', serif;
+}
+
+.content .aboutme-blurb{
+}
+
+.extlink{
+  color: #333;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.extlink:hover{
+  color: #e67635;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  border-bottom: 1px solid transparent;
+}
+
 .content h1 {
-  font-size: 60px;
-  margin-bottom: 10px;
-  font-family: "Libre Baskerville", serif;
-  font-style: italic;
 }
 
 .content h2 {
   font-size: 32px;
   margin-bottom: 10px;
-  font-family: "Libre Baskerville", serif;
-  font-style: italic;
+  font-family: 'DM Serif Display', serif;
 }
 
 .content section {
@@ -74,8 +91,7 @@ body {
 
 .highlight {
   font-size: 20px;
-  font-family: "Libre Baskerville", serif;
-  font-style: italic;
+  font-family: 'DM Serif Display', serif;
   font-weight: bold;
   transition: all 0.2s ease;
 }
@@ -88,7 +104,8 @@ body {
 
 .stories-page {
   padding: 40px;
-  font-family: "Helvetica Neue", sans-serif;
+  font-family: 'inter', sans-serif;
+  font-weight: 100;
 }
 
 .story-container {
@@ -115,7 +132,7 @@ body {
 }
 .story-box h2 {
   margin-top: 0;
-  font-family: "Libre Baskerville", serif;
+  font-family: 'DM Serif Display', serif;
   font-style: italic;
 }
 
@@ -127,20 +144,6 @@ body {
   display: flex;
   gap: 10px;
   margin-top: 10px;
-}
-
-.quote {
-  font-family: "Libre Baskerville", serif;
-  font-style: italic;
-  font-size: 22px;
-  margin: 40px 0;
-}
-
-.quote .author {
-  display: block;
-  font-size: 16px;
-  margin-top: 10px;
-  font-style: normal;
 }
 
 .filter-buttons {
