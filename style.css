@@ -5,7 +5,7 @@ html{
 /* testing */
   height: 100%;
   overflow-y: scroll;
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: y proximity;
 }
 
 body {
@@ -88,12 +88,14 @@ h3 {
 .section-writings,
 .section-projects,
 .section-contact {
+  scroll-snap-align: start;
   padding: 60px 40px;
 }
 
 .section-writings,
 .section-projects {
   background-color: #222;
+  height: 100vh;
 }
 
 .section-writings h2,
@@ -372,7 +374,8 @@ form button:hover {
 
 #intro{
   position: sticky;
-  top: 0;
+  top: 0;/*
+  height: 100vh;*/
   align-items: center;
   justify-content: center;
   z-index: 10;
