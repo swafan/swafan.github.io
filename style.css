@@ -2,6 +2,10 @@
 
 html{
   scroll-behavior: smooth;
+/* testing */
+  height: 100%;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
 }
 
 body {
@@ -66,7 +70,6 @@ h3 {
 .section-intro {
   padding: 100px 20px 40px;
   text-align: center;
-  height: 100vh;
 }
 
 .intro-heading {
@@ -327,6 +330,7 @@ form button:hover {
 }
 
 /* ======= LINKS & OTHERS ======= */
+
 .extlink{
   color: #333;
   transition: color 0.3s ease, border-bottom 0.3s ease;
@@ -350,4 +354,39 @@ form button:hover {
   text-decoration: none;
   cursor: pointer;
   color: #27548a;
+}
+
+/* ======= TRANSITIONS ======= */
+.sticky-section{
+  position: sticky;
+  top: 0;
+/*  background: white; */
+  z-index: 10;
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.fade-out {
+  opacity: 0;
+  transform: translateY(-30px);
+}
+
+#intro{
+  position: sticky;
+  top: 0;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: opacity 0.5s ease, transform 0.5s ease, height 0.6s ease;
+}
+
+#intro.fade-out {
+  opacity: 0;
+  transform: scale(0.98);
+  pointer-events: none;
+}
+
+#intro.fade-in{
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
 }
