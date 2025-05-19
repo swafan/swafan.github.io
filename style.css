@@ -52,13 +52,17 @@ body {
   font-weight: 800;
   margin-bottom: 0.5rem;
   text-align: center;
-  
 }
 
 .content .tagline{
   font-size: 1.125rem;
   text-align: center;
   font-family: 'DM Serif Display', serif;
+}
+
+.content .section-aboutme{
+  transform: translateY(40px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
 .content .aboutme-blurb{
@@ -340,28 +344,46 @@ form button:hover {
 }
 .section-intro {
   background-color: #FAEBD7; /* antique white */
+  padding: 80 0px;
+  height: 100vh;
+}
+
+.section-writings{
+  background-color: #222;
   padding: 80px 40px;
 }
 
-.section-writings {
-  background-color: #F5F5F5; /* soft gray */
+.section-writings h2{
+  color: #E6DBC8;
+  font-family: "Caveat", cursive;
+  font-size: 3rem;
+  font-weight: 200;
+}
+
+.section-projects{
+  background-color: #222;
   padding: 80px 40px;
 }
 
+.section-projects h2{
+  color: #E6DBC8;
+  font-family: "Caveat", cursive;
+  font-size: 3rem;
+  font-weight: 200;
+}
+/*
 .section-projects {
-  background-color: #FFF8DC; /* light cream */
+  background-color: #222;
   padding: 80px 40px;
 }
-
+*/
 .section-contact {
-  background-color: #E6F2FF; /* pale blue */
   padding: 80px 40px;
 }
 
 .footer {
-  background-color: #DCDCDC;
   text-align: center;
-  padding: 40px 20px;
+  padding: 20px 10px;
   font-size: 0.9rem;
 }
 
@@ -380,3 +402,4 @@ form button:hover {
   color: #e67635; /* Your accent color */
   text-decoration: underline;
 }
+
