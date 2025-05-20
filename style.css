@@ -19,7 +19,7 @@ body {
 .page {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+/*  min-height: 100vh; */
 }
 
 /* ======= TYPOGRAPHY ======= */
@@ -374,8 +374,9 @@ form button:hover {
 
 #intro{
   position: sticky;
-  top: 0;/*
-  height: 100vh;*/
+  opacity: 1;
+  top: 0;
+  height: 100vh;
   align-items: center;
   justify-content: center;
   z-index: 10;
@@ -412,6 +413,7 @@ form button:hover {
   object-fit: cover;
   border-radius: 50%;
   box-shadow: 4px 4px 0px 0px black; /* optional: hand-drawn vibe */
+  filter: grayscale(50%);
 }
 
         
