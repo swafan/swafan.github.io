@@ -403,4 +403,15 @@ form button:hover {
         margin-right: auto;
         border-radius: 50%;
     }
+
+.profile-photo {
+  display: block;
+  margin: 2rem auto;
+  width: 150px; /* adjust size here */
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 4px 4px 0px 0px black; /* optional: hand-drawn vibe */
+}
+
         
