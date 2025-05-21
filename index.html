@@ -51,22 +51,26 @@ TESTING
       <section id="writings" class="section-writings snap-start">
         <h2>Writings</h2>
 
+        <!---
         <div class="filter-buttons" role="group" aria-label="Filter Writings">
           <button data-filter="all" class="active">All</button>
           <button data-filter="fiction">Fiction</button>
           <button data-filter="philosophy">Philosophy</button>
           <button data-filter="memoir">Memoir</button>
         </div>
+      -->
 
         <div class="writings-grid">
-          <article class="writing-entry" data-categories="fiction philosophy">
+          <article class="writing-entry" data-categories="fiction philosophy technology">
             <header>
-              <h3>What is it like to be a meat?</h3>
+              <h3>What Is It Like to Be a Meat?</h3>
               <div class="tags">
                 <span class="tag">Fiction</span>
                 <span class="tag">Philosophy</span>
+                <span class="tag">Technology</span>
               </div>
             </header>
+            <p>Reading time: ~10mins</p>
             <p>Speculative philosophical fiction inspired by Thomas Nagel and Terry Bison. A transcript of a symposium between AI units set in a post-human world. Themes of recursion, consciousness, and phenomenology.</p>
             <footer class="box-footer">
               <div class="button-group">
@@ -78,12 +82,30 @@ TESTING
 
           <article class="writing-entry" data-categories="philosophy">
             <header>
-              <h3>"Good Enough" Epistemology and Relevant Goals Contextualism?</h3>
+              <h3>Modal Logic Ruins a Tech Bro's Day</h3>
+              <div class="tags">
+                <span class="tag">Philosophy</span>
+                <span class="tag">Technology</span>
+              </div>
+            </header>
+            <p>Reading time: ~5mins (10, if including proof)</p>
+            <p>A needlessly long-winded argument against what my friend said about a technological singularity. Complete with an optional modal logic proof for modal enthusiasts.</p>
+            <footer class="box-footer">
+              <div class="button-group">
+                <a class="wonky-button" href="Placeholder.pdf" download>Read more</a>
+              </div>
+            </footer>
+          </article>
+
+          <article class="writing-entry" data-categories="philosophy">
+            <header>
+              <h3>"Good Enough" Epistemology and Relevant Goals Contextualism</h3>
               <div class="tags">
                 <span class="tag">Philosophy</span>
               </div>
             </header>
-            <p>Abridged version of a 120-page honors philosophy thesis that proposes a novel form of epistemic contextualism by linking insights from Edward Craig and contemporary epistemology.</p>
+            <p>Reading time: ~45mins</p>
+            <p>Abridged version of my 120-page philosophy thesis that was one of only three in my graduating class that received honors. I propose a novel form of epistemic contextualism.</p>
             <footer class="box-footer">
               <div class="button-group">
                 <a class="button" href="Placeholder.pdf" download>Download PDF</a>
@@ -98,15 +120,62 @@ TESTING
       <section id="projects" class="section-projects snap-start">
         <h2>Projects</h2>
 
-        <article class="project-entry">
-          <header>
-            <h3>Random Forest Index Futures Forecaster</h3>
-          </header>
-          <p>Built a prototype classification model in Python using Bloomberg API data to forecast directional movement (up/down/flat) of Southeast Asian index futures based on features like volatility and volume. Initial tests showed ~80% directional accuracy on historical data, though likely subject to overfitting. Created during a summer internship on the equities desk at a bulge bracket investment bank. After I returned to university, the model was further refined and used by the trader desk-head in live decision-making.</p>
-          <footer class="box-footer">
-            <p>Technologies: Python, VBA</p>
-          </footer>
+        <!-- Stock predictor -->
+        <article class="project-entry with-bg" style="background-image: url('austin-hervias-VLpWpv3oDB4-unsplash.jpg');">
+          <div class="project-overlay">
+            <header>
+              <h3>Random Forest Index Futures Forecaster</h3>
+            </header>
+            <p>Role: Developer</p>
+            <p>Status: Deployed. Refined and in use after handoff</p>
+            <p>Built a prototype classification model during internship at investment bank. After refinement, currently in use by equities trader.</p>
+            <footer class="box-footer">
+              <p>Technologies: Python, VBA</p>
+              <button class="wonky-button" onclick="toggleDetails(this)">Read the story</button>
+            </footer>
+          </div>
         </article>
+
+          <!-- Stock predictor expanded -->
+          <div class="project-details hidden">
+            <p>Built a prototype classification model in Python using Bloomberg API data to forecast directional movement (up/down/flat) of Southeast Asian index futures based on features like volatility and volume. Initial tests showed ~80% directional accuracy on historical data, though likely subject to overfitting. Created during a summer internship on the equities desk at a bulge bracket investment bank. After I returned to university, the model was further refined and used by the trader desk-head in live decision-making.</p>
+            <br>
+            <p>Proprietary info means no demos allowed here.</p>
+          </div>
+
+        <!-- Barter -->
+        <article class="project-entry with-bg" style="background-image: url('barter-visual-language.png');">
+          <div class="project-overlay">
+            <header>
+              <h3>Barter EdTech App Launch</h3>
+            </header>
+            <p>Role: Co-founder, Product & Marketing Lead</p>
+              <p>Status: MVP Launched · Paused Post-COVID</p>
+              <p>Peer language-learning for students. Think Tinder meets tandem exchange.</p>
+            <footer class="box-footer">
+              <p>Technologies: Figma</p>
+              <button class="wonky-button" onclick="toggleDetails(this)">Read the story</button>
+            </footer>
+          </div>
+        </article>
+
+          <!-- Barter expanded -->
+          <div class="project-details hidden">
+              <p>In 2021, I co-founded a peer-learning edtech startup that helped undergrads connect over language learning. Think “Tinder for language exchange,” but grounded in academic collaboration and authentic conversation. I led marketing and coordinated design direction across our small team, working closely with designers and developers to build and launch our MVP.</p>
+              <figure>
+                <img src="barter-visual-language.png" alt="Barter visual language">
+                <figcaption>Visual language</figcaption>
+              </figure>
+              <p>Visual identity was key for me. I worked closely with our designers to build a visual identity that feels welcoming and collaborative.</p>
+              <br>
+              <p>Meanwhile, I led our direct marketing strategy, which allowed us to quickly expand across six universitis, with notable organic adoption—including a language professor who promoted the platform to her students as a peer-built initiative.</p>
+              <figure>
+                <img src="assets/barter-marketing-deck.png" alt="Marketing deck">
+                <figcaption>Excerpt from launch deck</figcaption>
+              </figure>
+              <p>Though our traction grew, momentum slowed when universities resumed in-person teaching and student routines normalized post-COVID. However, by that time, the MVP, visual identity, and promotional push were fully realized. Today, the project is paused—but the experience remains foundational to how I think about product, language, and user-centered design.</p>            
+            </div>
+
       </section>
 
       <section id="contact" class="section-contact">
