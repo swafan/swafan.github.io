@@ -22,26 +22,41 @@ const observer = new IntersectionObserver(
 
 observer.observe(bioEnd);
 
+// Show More
+function toggleDetails(button) {
+  const details = button.closest('article').nextElementSibling;
+  if (details.classList.contains('hidden')) {
+    details.classList.remove('hidden');
+    button.textContent = "Hide the story";
+  } else {
+    details.classList.add('hidden');
+    button.textContent = "Read the story";
+  }
+}
+
+
+
 // Filters
 
-  const filterButtons = document.querySelectorAll('.filter-buttons button');
-  const writingBoxes = document.querySelectorAll('.writing-box');
+  // const filterButtons = document.querySelectorAll('.filter-buttons button');
+  // const writingBoxes = document.querySelectorAll('.writing-box');
 
-  filterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const filter = button.getAttribute('data-filter');
+  // filterButtons.forEach(button => {
+  //   button.addEventListener('click', () => {
+  //     const filter = button.getAttribute('data-filter');
 
-      // Update active button
-      filterButtons.forEach(btn => btn.classList.remove('active'));
-      button.classList.add('active');
+  //     // Update active button
+  //     filterButtons.forEach(btn => btn.classList.remove('active'));
+  //     button.classList.add('active');
 
-      writingBoxes.forEach(box => {
-        const categories = box.getAttribute('data-categories').split(' ');
-        if (filter === 'all' || categories.includes(filter)) {
-          box.style.display = 'flex';
-        } else {
-          box.style.display = 'none';
-        }
-      });
-    });
-  });
+  //     writingBoxes.forEach(box => {
+  //       const categories = box.getAttribute('data-categories').split(' ');
+  //       if (filter === 'all' || categories.includes(filter)) {
+  //         box.style.display = 'flex';
+  //       } else {
+  //         box.style.display = 'none';
+  //       }
+  //     });
+  //   });
+  // });
+
