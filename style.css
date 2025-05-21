@@ -104,14 +104,14 @@ padding-bottom: 100px;
 .section-writings,
 .section-projects {
   background-color: #222;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .section-writings h2,
 .section-projects h2{
   color: #e6dbc8;
   font-family: "Caveat", cursive;
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: 200;
 }
 
@@ -170,11 +170,23 @@ padding: 200px;
 }
 
 /* ======= PROJECTS ======= */
-.project-entry {
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 1.5rem;
+  width: 100%;
+  height: 100%;
+  /* color: white; */
+  font-family: 'Inter', sans-serif;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  margin-bottom: 30px;
+  justify-content: center;
+  /* background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent 50%); */
+}
+
+.project-overlay p {
+  margin: 0.2rem 0;
 }
 
 .project-entry h3 {
@@ -484,5 +496,118 @@ form button:hover {
   z-index: 1;
 }
 
+/* ======= TESTING WONKY BUTTONS ======= */
 
-    
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
+
+.wonky-button {
+  display: inline-block;
+  /* padding: 0.6rem 1.4rem; */
+  padding: 0.2rem 1rem;
+  font-family: 'Caveat', cursive;
+  /*font-size: 1.4rem; */
+  font-size: 1rem;
+  /* background-color: #fdf6e3; */
+  color: #333;
+  border: 2px solid #333;
+  border-radius: 60% 40% 60% 40% / 50% 60% 40% 50%; /* lopsided oval */
+  box-shadow: 2px 3px 0 #333;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.wonky-button:hover {
+  animation: wiggle 0.4s ease-in-out forwards;
+  background-color: #f5e9d3;
+}
+
+@keyframes wiggle {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+  75% { transform: rotate(-1deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.project-details {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  margin-top: -12px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ======= TESTING BACKGROUND IMAGE ======= */
+
+.project-entry.with-bg {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* color: white; */
+  height: 350px; /* keep this */
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  overflow: hidden; /* this was the problem */
+  margin-top: 3rem;
+  margin-bottom: -1rem; /* keep margin here minimal */
+  z-index: 1;
+  
+}
+
+/* Optional: dark gradient overlay using ::before */
+.project-entry.with-bg::before {
+  content: '';
+  position: relative;
+  inset: 0;
+  /* background: linear-gradient(to right, rgba(1, 0.7, 0, 0), transparent 40%); */
+  z-index: 1;
+}
+
+/* Content goes above background/overlay */
+.project-overlay {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.project-overlay h3 {
+  font-family: "Caveat", cursive;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #e6dbc8;
+}
+
+.project-overlay p,
+.project-overlay footer {
+  font-size: 0.95rem;
+  color: #e6dbc8;
+}
+
+/* NEW: Expanded content below image */
+.project-details {
+  padding: 1.5rem;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #e6dbc8;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  z-index: 0;
+  background-color: hotpink;
+}
+
+/* toggle helper class */
+.hidden {
+  display: none;
+}
