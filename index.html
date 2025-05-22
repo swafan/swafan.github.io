@@ -7,13 +7,13 @@
   <link rel="stylesheet" href="style.css">
   <script defer src="script.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet" />
 </head>
 
 <body>
   <div class="page">
 
+    <!-- Navigation panel -->
     <nav class="nav">
       <a href="#aboutme">About</a>
       <a href="#writings">Writings</a>
@@ -22,43 +22,30 @@
 
     <main class="content">
 
-      <!--      <section id="intro" class="section-intro"> -->
+      <!-- Cover Page / Intro -->
       <section id="intro" class="section-intro snap-start sticky-section">
         <h1 class="intro-heading">Hi there, I'm Alvin.</h1>
         <p class="tagline">Technology, philosophy, and the desire to make sense of things.</p>
       </section>
 
-      <!-- scroll trigger -->
+      <!-- Scroll Trigger for Parallax Effect -->
       <div id="intro-end-marker" style="height: 1px"></div>
-
       <div class="intro-spacer"></div>
 
+      <!-- Short Bio / About Me -->
       <section id="aboutme" class="section-aboutme snap-start">
-
-        <!-- put a photo here -->
-<!-- ****************************
-TESTING        
-<img src="Placeholderimg 2.jpg" alt="Portrait of Alvin" class="profile-photo" />
-      -->
-
         <p class="aboutme-blurb">
           For the past few years, I worked in digital finance—building tech, talking to traders, and making <em>many</em> Excel models. Lately, I’ve been turning back to the slower questions that first got under my skin in college: how language misleads, what knowledge can’t be formalized, and why <a class="extlink" href="https://www.nortonsimon.org/art/detail/P.1969.094" target="_blank" rel="noopener noreferrer">a mustache on the Mona Lisa</a> still feels like a real provocation. I like <em>The Usual Suspects</em>, the gym, and anything written by <a class="extlink" href="https://en.wikipedia.org/wiki/Maggie_Nelson" target="_blank" rel="noopener noreferrer">Maggie Nelson</a>.
         </p>
-
+        <div class="resume-download">
+          <!-- New Resume -->
+          <a class="button-nice button-light" href="meat.html" download>Download resume</a>
+        </div>
       </section>
 
-      <!--      <section id="writings" class="section-writings"> -->
+      <!-- Writing Section -->
       <section id="writings" class="section-writings snap-start">
         <h2>Writings</h2>
-
-        <!---
-        <div class="filter-buttons" role="group" aria-label="Filter Writings">
-          <button data-filter="all" class="active">All</button>
-          <button data-filter="fiction">Fiction</button>
-          <button data-filter="philosophy">Philosophy</button>
-          <button data-filter="memoir">Memoir</button>
-        </div>
-      -->
 
         <div class="writings-grid">
           <article class="writing-entry" data-categories="fiction philosophy technology">
@@ -70,12 +57,14 @@ TESTING
                 <span class="tag">Technology</span>
               </div>
             </header>
-            <p>Reading time: ~10mins</p>
-            <p>Speculative philosophical fiction inspired by Thomas Nagel and Terry Bison. A transcript of a symposium between AI units set in a post-human world. Themes of recursion, consciousness, and phenomenology.</p>
+            <div class="writing-text">
+              <p>Reading time: ~10mins</p>
+              <p>Speculative philosophical fiction inspired by Thomas Nagel and Terry Bison. A transcript of a symposium between AI units set in a post-human world. Themes of recursion, consciousness, and phenomenology.</p>
+            </div>
             <footer class="box-footer">
               <div class="button-group">
-                <a class="button" href="What Is It Like to Be a Meat.pdf" download>Download PDF</a>
-                <a class="button-substack" href="https://swafan.substack.com/p/what-is-it-like-to-be-a-meat" target="_blank">Read on Substack</a>
+                <a class="button-nice button-dark" href="meat.html" download>Read here</a>
+                <a class="button-nice button-dark" href="https://swafan.substack.com/p/what-is-it-like-to-be-a-meat" target="_blank">Read on Substack</a>
               </div>
             </footer>
           </article>
@@ -88,11 +77,13 @@ TESTING
                 <span class="tag">Technology</span>
               </div>
             </header>
-            <p>Reading time: ~5mins (10, if including proof)</p>
-            <p>A needlessly long-winded argument against what my friend said about a technological singularity. Complete with an optional modal logic proof for modal enthusiasts.</p>
+            <div class="writing-text">
+              <p>Reading time: ~5mins (10, if including proof)</p>
+              <p>A needlessly long-winded argument against what my friend said about a technological singularity. Complete with an optional modal logic proof for modal enthusiasts.</p>
+            </div>
             <footer class="box-footer">
               <div class="button-group">
-                <a class="wonky-button" href="Placeholder.pdf" download>Read more</a>
+                <a class="button-nice button-dark" href="modalsingularity.html" download>Read here</a>
               </div>
             </footer>
           </article>
@@ -104,83 +95,111 @@ TESTING
                 <span class="tag">Philosophy</span>
               </div>
             </header>
-            <p>Reading time: ~45mins</p>
-            <p>Abridged version of my 120-page philosophy thesis that was one of only three in my graduating class that received honors. I propose a novel form of epistemic contextualism.</p>
+            <div class="writing-text">
+              <p>Reading time: ~45mins</p>
+              <p>Abridged version of my 120-page philosophy thesis that was one of only three in my graduating class that received honors. I propose a novel form of epistemic contextualism.</p>
+            </div>
             <footer class="box-footer">
               <div class="button-group">
-                <a class="button" href="Placeholder.pdf" download>Download PDF</a>
+                <a class="button-nice button-dark" href="epistemology.html" download>Read here</a>
               </div>
             </footer>
           </article>
-          <!--       </section> -->
         </div>
       </section>
 
-      <!--      <section id="projects" class="section-projects"> -->
+      <!-- Projects Section -->
       <section id="projects" class="section-projects snap-start">
         <h2>Projects</h2>
 
-        <!-- Stock predictor -->
-        <article class="project-entry with-bg" style="background-image: url('austin-hervias-VLpWpv3oDB4-unsplash.jpg');">
-          <div class="project-overlay">
-            <header>
-              <h3>Random Forest Index Futures Forecaster</h3>
-            </header>
-            <p>Role: Developer</p>
-            <p>Status: Deployed. Refined and in use after handoff</p>
-            <p>Built a prototype classification model during internship at investment bank. After refinement, currently in use by equities trader.</p>
-            <footer class="box-footer">
-              <p>Technologies: Python, VBA</p>
-              <button class="wonky-button" onclick="toggleDetails(this)">Read the story</button>
-            </footer>
-          </div>
-        </article>
-
-          <!-- Stock predictor expanded -->
-          <div class="project-details hidden">
-            <p>Built a prototype classification model in Python using Bloomberg API data to forecast directional movement (up/down/flat) of Southeast Asian index futures based on features like volatility and volume. Initial tests showed ~80% directional accuracy on historical data, though likely subject to overfitting. Created during a summer internship on the equities desk at a bulge bracket investment bank. After I returned to university, the model was further refined and used by the trader desk-head in live decision-making.</p>
-            <br>
-            <p>Proprietary info means no demos allowed here.</p>
-          </div>
-
-        <!-- Barter -->
-        <article class="project-entry with-bg" style="background-image: url('barter-visual-language.png');">
+        <!-- Project: Barter -->
+        <!-- Project: Barter Title Card -->
+        <article class="project-entry with-bg" style="background-image: url('Barter-Demo-3.png');">
           <div class="project-overlay">
             <header>
               <h3>Barter EdTech App Launch</h3>
             </header>
-            <p>Role: Co-founder, Product & Marketing Lead</p>
-              <p>Status: MVP Launched · Paused Post-COVID</p>
-              <p>Peer language-learning for students. Think Tinder meets tandem exchange.</p>
+            <p><span class="project-emphasis">Role: </span>Co-founder, Product & Marketing Lead</p>
+            <p><span class="project-emphasis">Status: </span>MVP Launched · Paused Post-COVID</p>
+            <p><span class="project-emphasis">What Happened: </span>We built a student language app from scratch. Here’s what worked—and what didn’t.</p>
+            <p><span class="project-emphasis">Technologies: </span> Figma</p>
             <footer class="box-footer">
-              <p>Technologies: Figma</p>
-              <button class="wonky-button" onclick="toggleDetails(this)">Read the story</button>
+               <button class="button-nice button-dark" onclick="toggleDetails(this)">Read the story</button>
             </footer>
           </div>
         </article>
+        <!-- Project: Barter Expanded -->
+        <div class="project-details hidden">
+          <div class="project-grid">
 
-          <!-- Barter expanded -->
-          <div class="project-details hidden">
-              <p>In 2021, I co-founded a peer-learning edtech startup that helped undergrads connect over language learning. Think “Tinder for language exchange,” but grounded in academic collaboration and authentic conversation. I led marketing and coordinated design direction across our small team, working closely with designers and developers to build and launch our MVP.</p>
+            <div class="project-text">
+                <p><span class="project-text-subtitle">The Idea</span></p>
+                <p>A peer-learning platform for students to practice languages through real conversation. Think Tinder meets tandem exchange—fast onboarding, academic framing, meaningful dialogue.</p>
+
+                <p><span class="project-text-subtitle">My Role</span></p>
+                <p>I co-founded and led product marketing and design coordination. I worked closely with designers and developers to ship the MVP and shape our visual identity.</p>
+
+                <p><span class="project-text-subtitle">Approach</span></p>
+                <p><span class="project-emphasis">Design / Product: </span>I focused on defining a visual language that felt warm, playful, and credible. Typography, palette, and layout choices reinforced a tone of student-driven collaboration.</p>
+                <p><span class="project-emphasis">Marketing: </span>We ran direct outreach across six universities, partnering with student clubs and language departments. Our most engaged cohort came from a Brown University professor who promoted us to her language class.</p>
+
+                <p><span class="project-text-subtitle">Outcome</span></p>
+                <p>We launched a polished MVP with working onboarding and early matching logic. Organic traction was strong, but as in-person routines resumed post-COVID, usage slowed. The project is now paused—but the process shaped how I think about product, language, and UX.</p>
+            </div>
+
+            <div class="project-media">
               <figure>
-                <img src="barter-visual-language.png" alt="Barter visual language">
+                <img src="barter-visual-language.png" alt="Barter visual language" class="project-photo">
                 <figcaption>Visual language</figcaption>
               </figure>
-              <p>Visual identity was key for me. I worked closely with our designers to build a visual identity that feels welcoming and collaborative.</p>
-              <br>
-              <p>Meanwhile, I led our direct marketing strategy, which allowed us to quickly expand across six universitis, with notable organic adoption—including a language professor who promoted the platform to her students as a peer-built initiative.</p>
               <figure>
-                <img src="assets/barter-marketing-deck.png" alt="Marketing deck">
-                <figcaption>Excerpt from launch deck</figcaption>
+                <img src="barter-BMC-1.jpg" alt="Early bmc" class="project-photo">
+                <figcaption>Early BMC</figcaption>
               </figure>
-              <p>Though our traction grew, momentum slowed when universities resumed in-person teaching and student routines normalized post-COVID. However, by that time, the MVP, visual identity, and promotional push were fully realized. Today, the project is paused—but the experience remains foundational to how I think about product, language, and user-centered design.</p>            
             </div>
+
+          </div>
+        </div>
+
+        <!-- Project: Stock Predictor -->
+        <!-- Project: Stock Predictor Title Card -->
+        <article class="project-entry with-bg" style="background-image: url('Royaltyfree-stock-chart.png');">
+          <div class="project-overlay">
+            <header>
+              <h3>Random Forest Index Futures Forecaster</h3>
+            </header>
+            <p><span class="project-emphasis">Role: </span>Developer</p>
+            <p><span class="project-emphasis">Status: </span>Deployed. Refined and in use after handoff</p>
+            <p><span class="project-emphasis">What Happened: </span>Learned Python and ML on the job. Built a futures predictor that traders still use.</p>
+            <p><span class="project-emphasis">Technologies: </span> Python, VBA</p>
+            <footer class="box-footer">
+              <button class="button-nice button-dark" onclick="toggleDetails(this)">Read the story</button>
+            </footer>
+          </div>
+        </article>
+        <!-- Project: Stock Predictor Expanded -->
+        <div class="project-details hidden">
+
+          <div class="project-text">
+            <p><span class="project-text-subtitle">The Idea</span></p>
+            <p>Forecast directional movement (up/down/flat) of Southeast Asian index futures using “underutilized” trading signals (beyond volatility and momentum) to help traders make real-time hedging decisions.</p>
+
+            <p><span class="project-text-subtitle">My Role</span></p>
+            <p>During a summer internship on an equities desk, I built the working prototype from scratch—my first time using Python or machine learning. I also handled Excel/VBA integration for trader handoff.</p>
+
+            <p><span class="project-text-subtitle">Approach</span></p>
+            <p>Spent evenings and weekends self-teaching Python and ML. Parsed 20+ years of millisecond-level Bloomberg data. The model hit ~80% accuracy on historical data—likely overfit, but directionally robust.</p>
+
+            <p><span class="project-text-subtitle">Outcome</span></p>
+            <p>The model was later refined and used by the head trader in live decisions. Proprietary constraints prevent sharing code or demos—but it remains one of my most direct applications of data science in practice.</p>
+          </div>
+        </div>
 
       </section>
 
+      <!-- Contact Info -->
       <section id="contact" class="section-contact">
         <h2>Contact Me!</h2>
-
         <form action="mailto:alvin.shuwai@gmail.com?subject=Nice%20to%20meet%20you!" method="POST" enctype="text/plain">
           <label for="name">Name</label>
           <input type="text" id="name" name="name" required>
@@ -195,6 +214,7 @@ TESTING
         </form>
       </section>
 
+      <!-- Footer -->
       <section class="footer">
         <p class="footer-links">
           <a href="https://www.linkedin.com/in/shu-wai-alvin-fan/" target="_blank" rel="noopener noreferrer">LinkedIn</a> /
