@@ -2,7 +2,6 @@
 
 html{
   scroll-behavior: smooth;
-/* testing */
   height: 100%;
   overflow-y: scroll;
   scroll-snap-type: y proximity;
@@ -36,8 +35,10 @@ h1 {
 }
 
 h2 {
-  font-size: 3rem;
   font-family: "Caveat", cursive;
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 200;
 }
 
 h3 {
@@ -46,7 +47,6 @@ h3 {
 }
 
 /* ======= NAVIGATION ======= */
-
 .nav {
   text-align: center;
   padding: 30px 0;
@@ -67,9 +67,7 @@ h3 {
 }
 
 /* ======= SECTION STYLES ======= */
-
 .section-intro {
- /* padding: 20px 20px 40px; */
 padding-bottom: 100px;
   text-align: center;
 }
@@ -110,33 +108,65 @@ padding-bottom: 100px;
 .section-writings h2,
 .section-projects h2{
   color: #e6dbc8;
-  font-family: "Caveat", cursive;
-  font-size: 4rem;
-  font-weight: 200;
 }
 
-
 /* ======= ABOUT ME ======= */
-/*.aboutme{
-    height: 100vh;
-} */
+.section-aboutme{
+  display: flex;
+  flex-direction: column;
+}
 
 .aboutme-blurb{
-padding: 200px;
+  padding: 200px;
   max-width: 800px;
   margin: 0 auto;
   position: relative;
   z-index: 2;
   color: #e6dbc8;
-
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.75;
   letter-spacing: 0.4px;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
-
 }
 
+#aboutme {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  padding: 100px 20px;
+  overflow: hidden; /* ensures child pseudo-element stays contained */
+}
+
+#aboutme::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url('Placeholderimg 2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* parallax */
+  filter: grayscale(100%);
+  z-index: 0;
+}
+
+#aboutme::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* adjust opacity */
+  z-index: 1;
+}
+
+.resume-download{
+  z-index: 10;
+  margin-top:-10rem;
+}
 
 /* ======= WRITINGS ======= */
 .writings-grid{
@@ -146,7 +176,9 @@ padding: 200px;
 }
 
 .writing-entry {
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
   border-radius: 10px;
   background-color: #fff;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
@@ -169,35 +201,149 @@ padding: 200px;
   color: #555;
 }
 
+.writing-text{
+  flex-grow: 1;
+}
+
+.box-footer{
+  margin-top: 1rem;
+}
+
 /* ======= PROJECTS ======= */
+
+/* Background image */
+.project-entry.with-bg {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 375px; /* keep this */
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  overflow: hidden;
+  margin-top: 3rem;
+  margin-bottom: -1rem;
+  z-index: 1;
+}
+
+.project-entry.with-bg::before {
+  content: '';
+  position: relative;
+  inset: 0;
+  z-index: 1;
+}
+
+/* Content goes above background/overlay */
 .project-overlay {
-  position: absolute;
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
   top: 0;
   left: 0;
   padding-top: 1.5rem;
   width: 100%;
   height: 100%;
-  /* color: white; */
   font-family: 'Inter', sans-serif;
-  display: flex;
-  flex-direction: column;
+  line-height: 2;
   justify-content: center;
-  /* background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent 50%); */
+}
+
+.project-overlay h3 {
+  font-family: "Caveat", cursive;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #333;
 }
 
 .project-overlay p {
-  margin: 0.2rem 0;
-}
-
-.project-entry h3 {
-  color: #e6dbc8;
-  margin-bottom: 0.5rem;
-}
-
-.project-entry p {
   margin: 0;
   font-size: 0.95rem;
+  color: #333;
+}
+
+.project-emphasis{
+  font-weight: 700;
+  font-style: italic;
+}
+
+.project-overlay footer {
+  margin: 1rem 0;
+}
+
+/* Expanded content below image */
+.hidden {
+  display: none;
+}
+
+.project-details {
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e6dbc8;
+  z-index: 0;
   color: #e6dbc8;
+}
+
+.project-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.project-text-subtitle{
+  font-weight: bold;
+  font-size: 2.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.25rem;
+  letter-spacing: 0.1rem;
+  display: block;
+  font-family: "Caveat", cursive;
+}
+
+.project-grid { /* only applicable for Barter */
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  gap: 2rem;
+  align-items: start;
+  margin: 2rem 0;
+}
+
+.project-media figure { /* only applicable for Barter */
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.project-media img { /* only applicable for Barter */
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: block;
+  margin: 0 auto;
+}
+
+.project-photo { /* only applicable for Barter */
+  float: right; /* or left */
+  max-width: 600px; /* adjust to preferred size */
+  margin: 0 1rem 0;
+  border-radius: 8px;
+}
+
+figure img { /* only applicable for Barter */
+  display: block; /* ensures it doesn’t sit inline */
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+figcaption { /* only applicable for Barter */
+  display: block;
+  font-size: 0.85rem;
 }
 
 /* ======= CONTACT ======= */
@@ -277,59 +423,6 @@ padding: 200px;
   margin-top: 10px;
 }
 
-/* For filtering x */
-.filter-buttons {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 30px;
-  flex-wrap: flex;
-}
-
-.filter-buttons button {
-  padding: 10px 15px;
-  background-color: #eee;
-  border: none;
-  cursor: pointer;
-  font-family: inherit;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-}
-
-.filter-buttons button.active,
-.filter-buttons button:hover {
-  background-color: #333;
-  color: white;
-}
-
-/* for downloading docs*/
-.button {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 8px 12px;
-  background-color: #333;
-  color: white;
-  text-decoration: none;
-  border-radius: 4px;
-}
-
-.button:hover {
-  background-color: #666;
-}
-
-.button-substack {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 8px 12px;
-  background-color: #ff7731;
-  color: white;
-  text-decoration: none;
-  border-radius: 4px;
-}
-
-.button-substack:hover {
-  background-color: #ffaa7e;
-}
-
 form {
   display: flex;
   flex-direction: column;
@@ -362,7 +455,7 @@ form button {
 }
 
 form button:hover {
-  background-color: #555;
+  background-color: #e67635;
 }
 
 /* ======= LINKS & OTHERS ======= */
@@ -460,154 +553,153 @@ form button:hover {
   box-shadow: 4px 4px 0px 0px black; /* optional: hand-drawn vibe */
 }
 
-/* testing parallax */
-
-
-#aboutme {
+/* ======= BUTTONS ======= */
+/* Inspired by Wayra https://tympanus.net/Development/ButtonStylesInspiration/ */
+.button-nice {
   position: relative;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: #fff;
-  padding: 100px 20px;
-  overflow: hidden; /* ensures child pseudo-element stays contained */
-}
-
-#aboutme::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-image: url('Placeholderimg 2.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed; /* parallax */
-  filter: grayscale(100%);
-  z-index: 0;
-}
-
-#aboutme::after {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-color: rgba(0, 0, 0, 0.6); /* adjust opacity */
-  z-index: 1;
-}
-
-/* ======= TESTING WONKY BUTTONS ======= */
-
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
-
-.wonky-button {
   display: inline-block;
-  /* padding: 0.6rem 1.4rem; */
-  padding: 0.2rem 1rem;
-  font-family: 'Caveat', cursive;
-  /*font-size: 1.4rem; */
+  font-weight: 700;
   font-size: 1rem;
-  /* background-color: #fdf6e3; */
-  color: #333;
-  border: 2px solid #333;
-  border-radius: 60% 40% 60% 40% / 50% 60% 40% 50%; /* lopsided oval */
-  box-shadow: 2px 3px 0 #333;
-  text-decoration: none;
-  transition: transform 0.2s ease;
-}
-
-.wonky-button:hover {
-  animation: wiggle 0.4s ease-in-out forwards;
-  background-color: #f5e9d3;
-}
-
-@keyframes wiggle {
-  0% { transform: rotate(0deg); }
-  25% { transform: rotate(-2deg); }
-  50% { transform: rotate(2deg); }
-  75% { transform: rotate(-1deg); }
-  100% { transform: rotate(0deg); }
-}
-
-.project-details {
-  margin-top: 1rem;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  opacity: 1;
-  transition: opacity 0.3s ease;
-  margin-top: -12px;
-}
-
-.hidden {
-  display: none;
-}
-
-/* ======= TESTING BACKGROUND IMAGE ======= */
-
-.project-entry.with-bg {
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  /* color: white; */
-  height: 350px; /* keep this */
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  padding: 1.5rem;
-  overflow: hidden; /* this was the problem */
-  margin-top: 3rem;
-  margin-bottom: -1rem; /* keep margin here minimal */
-  z-index: 1;
-  
-}
-
-/* Optional: dark gradient overlay using ::before */
-.project-entry.with-bg::before {
-  content: '';
-  position: relative;
-  inset: 0;
-  /* background: linear-gradient(to right, rgba(1, 0.7, 0, 0), transparent 40%); */
-  z-index: 1;
-}
-
-/* Content goes above background/overlay */
-.project-overlay {
-  position: relative;
-  z-index: 2;
-  max-width: 700px;
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-}
-
-.project-overlay h3 {
-  font-family: "Caveat", cursive;
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-  color: #e6dbc8;
-}
-
-.project-overlay p,
-.project-overlay footer {
-  font-size: 0.95rem;
-  color: #e6dbc8;
-}
-
-/* NEW: Expanded content below image */
-.project-details {
-  padding: 1.5rem;
-  border-radius: 12px;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #e6dbc8;
-  margin: 0 auto;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  line-height: 1.1;
+  overflow: hidden;
+  cursor: pointer;
+  transition: color 0.3s, border-color 0.3s;
+  border-radius: 30px; /* Rounded corners */
   z-index: 0;
-  background-color: hotpink;
+  vertical-align: middle;
+  text-decoration: none;
 }
 
-/* toggle helper class */
-.hidden {
-  display: none;
+.button-dark{
+  padding: 0.55em 1.25em;
+  border: 2px solid #222;
+  color: #222;
+  background: transparent;
+}
+
+.button-dark::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150%;
+  height: 100%;
+  z-index: -1;
+  transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+  transform-origin: 0% 100%;
+  transition: transform 0.3s, opacity 0.3s, background-color 0.3s;
+  opacity: 0;
+  border-radius: 8px; /* Match button radius */
+}
+
+.button-dark:hover {
+  color: #fff;
+  border-color: #e67635;
+}
+
+.button-dark:hover::before {
+  opacity: 1;
+  background-color: #e67635;
+  transform: rotate3d(0, 0, 1, 0deg);
+  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.button-light{
+  padding: 0.55em 1.25em;
+  border: 2px solid #e6dbc8;
+  color: #e6dbc8;
+  background: transparent;
+}
+
+.button-light::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150%;
+  height: 100%;
+  z-index: -1;
+  transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+  transform-origin: 0% 100%;
+  transition: transform 0.3s, opacity 0.3s, background-color 0.3s;
+  opacity: 0;
+  border-radius: 8px; /* Match button radius */
+}
+
+.button-light:hover {
+  color: #fff;
+  border-color: #e67635;
+}
+
+.button-light:hover::before {
+  opacity: 1;
+  background-color: #e67635;
+  transform: rotate3d(0, 0, 1, 0deg);
+  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+/* ======= WRITING-PAGES ======= */
+.writing-content{
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  font-family: 'Inter', sans-serif;
+  color: #333;
+}
+
+.writing-content.heading{
+  text-align: center;
+}
+
+.writing-content h1{
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+  letter-spacing: 0.1px;
+  text-align: center;
+}
+
+.writing-content h2{
+  font-family: 'Inter', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 500;   
+  text-decoration: italic;
+  text-align: center
+}
+
+.writing-body {
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  line-height: 1.7;
+  font-size: 1.05rem;
+  font-weight: 300;
+}
+
+.writing-body h3 {
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+
+.writing-body h4 {
+  font-size: 1.25rem;
+  margin-top: 1.5rem;
+  font-weight: 600;
+}
+
+.writing-body hr {
+  margin: 2rem 0;
+  border: none;
+  border-top: 1px solid #ccc;
+}
+
+.writing-body em {
+  font-style: italic;
+}
+
+.writing-body strong {
+  font-weight: bold;
+}
+
+.footnote{
+
 }
