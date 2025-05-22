@@ -1,0 +1,114 @@
+<!-- modalsingularity.html -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What Is It Like to Be a Meat?</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="page">
+
+    <!-- Modified nav with return link -->
+    <nav class="nav">
+        <a href="index.html"><i class="fa-solid fa-arrow-left"></i> Back to Home Page</a>
+        <a href="index.html#aboutme">About</a>
+        <a href="index.html#writings">Writings</a>
+        <a href="index.html#projects">Projects</a>
+    </nav>
+
+    <main class="content writing-content">
+        <div class="content writing-content heading">
+            <h1>Modal Logic Ruins a Tech Bro's Day</h1>
+            <!-- <h2>Transcript of a Post-Human Symposium</h2> --> <!-- subtitle-->
+            <p class="tags">
+                <span class="tag">Philosophy</span>
+                <span class="tag">Technology</span>
+            </p>
+            <p class="reading-time">~5 mins read (10, if including proof)</p>
+      </div>
+
+        <section class="writing-body">
+
+            <p>A friend insists: “if the Singularity is possible, it will happen.”</p>
+
+            <p>This sort of confidence isn’t unusual. People often treat the technological Singularity—a hypothetical runaway explosion of machine intelligence—as not just as possibility, but an inevitability.</p>
+
+            <p>While I’m somewhat sympathetic to views that a Singularity is a possibility for us, I am not nearly as sympathetic to abuses of logical concepts like possibility and necessity.</p>
+
+            <p>This is a needlessly verbose and involved disagreement of my friend’s claim (accompanied by the sketch of a proof in from modal logic for the logic-interested).</p>
+
+            <hr>
+
+            <p>There’s a common confusion here: mistaking something being <em>possible</em> for it being <em>necessary</em>. At the risk of strawman-ing my friend’s claim: just because it is <em>possible</em> that I will train really hard and win the Olympics rowing singles doesn’t mean it is <em>necessary</em> that this would happen—even though I tried really hard on my rowing team in high school. Likewise, I can imagine a world where the Singularity never arrives: AI progress stalls, policy intervenes, or humanity simply loses interest. Whether or not that <em>will</em> be the case, it means that the Singularity is not <em>necessary</em>, but at best contingent.</p>
+
+            <p>“Potato (read ‘po-tay-toe’) / Potato (read ‘poe-tah-toe’).”</p>
+
+            <p>Isn’t that just semantics? Maybe. But semantics matter.</p>
+
+            <p>Language is perhaps our best tool to <span class="footnote">do things</span>.  The ways in which we use language—carelessly, carefully—determine our reality. Our use (and misuse) of language shapes the very ways we think (and <em>can</em> think). Consider the term “gaslight” that was not prevalent in our lexicon until relatively recently. Many victims of gaslighting <em>did not have the words</em> to express their suffering. But words and semantics allow us to make sense of the ineffable.</p>
+
+            <p>So, semantics matter. Especially when they shape our beliefs about the future. Saying something <em>will</em> happen because it can is a sleight of hand—an appeal to possibility masquerading as destiny. It actively harms our free choice to make sense of our technological progress and ensure we continue to trudge forwards together towards something with hope and with caution. It’s precisely because the Singularity is <em>contingent</em> that it’s worth talking now.</p>
+
+            <!-- Modal Logic Section-->
+            <h4>For the logicians / logically curious</h4>
+
+            <p><strong>My friend's claim</strong></p>
+
+            <p>Let <em>p</em> = “A Singularity occurs.” To be as charitable as possible, the claim roughly amounts to:</p>
+
+            <p>(1) &#9674;<em>p</em> &#8594; <em>p</em>: that is, if the Singularity is possible, then it will occur in our world.</p>
+
+            <p>Now, while this looks suspicious, certain modal systems (like S5) can make similar-looking inferences. For example, under axiom 5 of S5:</p>
+            
+            <p>(A) &#9744;(<em>p</em> &#8594; &#9744;<em>p</em>): it is a necessity that if <em>p</em> is true, then it's necessarily so.</p>
+            
+            <p>Consider an arbitrary Kripke model &#8499; = ⟨W,R,V⟩; where W denotes worlds, R accessibility relations, and V valuation. Let's denote our world <em>w</em> &#8712; W.</p>
+
+            <p>Now suppose we assume &#9674;<em>p</em> — that is, in some world <em>v</em>, accessible from our world <em>w</em>, <em>p</em> holds. That is:</p>
+
+            <p>&#8499;, <em>v</em> ⊩ <em>p</em> where &exist;<em>v</em> &isin; <em>W</em> : <em>R</em><sub><em>wv</em></sub>.</p>
+
+            <p>Then, from (A), we know:</p>
+
+            <p>&#8499;, <em>v</em> ⊩ <em>p</em> &rarr; &#9744;<em>p</em></p>
+
+            <p>So &#8499;, <em>v</em> ⊩ &#9744;<em>p</em></p>
+
+            <p>But if accessibility is symmetric (as in S5) and <em>R</em><sub><em>wv</em></sub>, then &#8499;, <em>w</em> ⊩ <em>p</em>. A singularity occurs in our world.</p>
+
+            <p><strong>The Argument</strong></p>
+
+            <p>This should raise flags. As mentioned above, we <em>can</em> imagine worlds where a Singularity does not occur (e.g., AI progress stalls, policy intervenes, or humanity simply loses interest): that is, &#9674;&not;<em>p</em></p>
+
+            <p><em>p</em> &rarr; &#9674;&not;<em>p</em></p>
+
+            <p>&rArr; <em>p</em> &rarr; &not;&#9744;&not;&not;<em>p</em></p>
+
+            <p>&rArr; <em>p</em> &rarr; &not;&#9744;<em>p</em></p>
+
+            <p>By necessitation:</p>
+
+            <p>&#9744;(<em>p</em> &rarr; &not;&#9744;<em>p</em>)</p>
+
+            <p>From propositional logic:</p>
+
+            <p>&#9744;(<em>p</em> &rarr; &not;&#9744;<em>p</em>) &rArr; &not;&#9744;(<em>p</em> &rarr; &#9744;<em>p</em>)</p>
+
+            <p>But this contradicts (A)</p>
+
+            <p>In other words, we don’t deny that the Singularity is possible (&#9674;<em>p</em>). But we must also accept that its non-occurrence is possible (&#9674;&not;<em>p</em>). Thus, even if it occurs, it does so contingently, not necessarily.</p>
+
+            <h4>Conclusion (for all readers):</h4>
+
+            <p><strong>The future is open. Even modal logic agrees.</strong></p>
+
+        </section>
+
+    </main>
+  </div>
+</body>
+</html>
