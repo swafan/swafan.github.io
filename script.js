@@ -1,4 +1,4 @@
-// Fade in-out
+// SCROLLING TITLE CARD --> ABOUT ME TRANSITION
 
 const title = document.querySelector("#intro");
 const bioEnd = document.querySelector("#intro-end-marker");
@@ -22,7 +22,8 @@ const observer = new IntersectionObserver(
 
 observer.observe(bioEnd);
 
-// Show More
+// EXPANDING AND HIDING PROJECT DETAILS
+
 function toggleDetails(button) {
   const details = button.closest('article').nextElementSibling;
   if (details.classList.contains('hidden')) {
@@ -34,29 +35,13 @@ function toggleDetails(button) {
   }
 }
 
+// FOOTNOTES IN WRITING PIECES
 
-
-// Filters
-
-  // const filterButtons = document.querySelectorAll('.filter-buttons button');
-  // const writingBoxes = document.querySelectorAll('.writing-box');
-
-  // filterButtons.forEach(button => {
-  //   button.addEventListener('click', () => {
-  //     const filter = button.getAttribute('data-filter');
-
-  //     // Update active button
-  //     filterButtons.forEach(btn => btn.classList.remove('active'));
-  //     button.classList.add('active');
-
-  //     writingBoxes.forEach(box => {
-  //       const categories = box.getAttribute('data-categories').split(' ');
-  //       if (filter === 'all' || categories.includes(filter)) {
-  //         box.style.display = 'flex';
-  //       } else {
-  //         box.style.display = 'none';
-  //       }
-  //     });
-  //   });
-  // });
+function toggleFootnote(el) {
+  const note = el.querySelector('.footnote-content');
+  if (window.matchMedia('(hover: none)').matches) {
+    // On mobile, toggle
+    note.style.display = (note.style.display === 'block') ? 'none' : 'block';
+  }
+}
 
