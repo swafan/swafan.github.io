@@ -215,6 +215,10 @@ h3 {
 
 /* ======= PROJECTS ======= */
 
+.project-image-mobile{
+  display: none;
+}
+
 /* Background image */
 .project-entry.with-bg {
   position: relative;
@@ -706,13 +710,13 @@ img {
 
 /* =========== MOBILE =========== */
 
-/* Hover works only on non-touch devices */
+/* === Hover works only on non-touch devices === */
 @media (max-width: 48rem) {
   .intro-heading {
     font-size: 4rem;
   }
 
-  /* .section-intro, */
+  /* === Global === */
   .section-aboutme,
   .section-writings,
   .section-projects,
@@ -720,11 +724,12 @@ img {
     padding: 2.5rem 1.25rem;
   }
 
+  /* === Navigation === */
   .nav a {
     margin: 0 0.625rem;
   }
 
-  /* testing tighter vertical spacing */
+  /* === Hero Section === */
   .section-intro{
     padding-bottom: 3rem;    
   }
@@ -743,7 +748,7 @@ img {
   padding: 0 1rem;
   }
 
-  /* Additional fixes for aboutme */
+  /* === AboutMe Seciton === */
   .aboutme-blurb {
     padding: 2rem 1rem;
     font-size: 0.95rem;
@@ -764,16 +769,20 @@ img {
     margin-top: 0;
   }
 
-  /* Projects */
+  /* === Projects === */
+
+  .project-image-mobile {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
   .project-entry.with-bg {
-    /* background-image: none !important; */
-    background-color: var(--black); /* Fallback color, or customize per project */
+    background-image: none !important;
     padding: 0;
-    /* testing */
     display: flex;
     flex-direction: column;
     justify-content: flex-start; /* or space-between if using footer placement */
-    color: var(--beige);
   }
 
   .project-entry.with-bg::before {
@@ -782,46 +791,11 @@ img {
     background-position: center;
   }
 
-  /* Only affecting Project Barter */
-  .project-entry.project-barter{
-    background-image: none;
-  }
-
-  .project-entry.project-barter::before{
-    content: "";
-    display: block;
-    /* height: 200px; */
-    background-image: url('Barter-Demo-Mobile.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
-      /* Optional: stack layout for expanded content */
-      /* .project-entry.project-barter + .project-details .project-grid {
-        display: block;
-      }
-
-      .project-entry.project-barter + .project-details .project-media {
-        margin-top: 2rem;
-      }
-
-      .project-entry.project-barter + .project-details .project-media figure {
-        margin: 1rem auto;
-        width: 100%;
-        text-align: center;
-      }
-
-      .project-entry.project-barter + .project-details .project-media img {
-        width: 100%;
-        max-width: 100%;
-      } */
-
-  .project-overlay {
-    position: relative;
-    /* background-color: #1e1e1e; matching palette or use from image */
-    color: #e6dbc8;
-    padding: 1.25rem;
+  .project-overlay{
+    /* position: relative; */
+    background-color: var(--beige);
+    color: var(--black);
+    padding: 0.75rem;
     text-align: left;
     box-shadow: 0 -2px 12px rgba(0,0,0,0.2);
   }
@@ -868,12 +842,49 @@ img {
     margin-top: 1rem;
   }
 
+  /* Only affecting Project Barter */
+  /* .project-entry.project-barter{
+    background-image: none;
+  } */
+
+  /* .project-entry.project-barter::before{
+    content: "";
+    display: block;
+    /* height: 200px; */
+    /* background-image: url('pexels-detpho-1804976.jpg'); placeholder photo to see how this works */
+    /* background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  } */
+
+      /* Optional: stack layout for expanded content */
+      /* .project-entry.project-barter + .project-details .project-grid {
+        display: block;
+      }
+
+      .project-entry.project-barter + .project-details .project-media {
+        margin-top: 2rem;
+      }
+
+      .project-entry.project-barter + .project-details .project-media figure {
+        margin: 1rem auto;
+        width: 100%;
+        text-align: center;
+      }
+
+      .project-entry.project-barter + .project-details .project-media img {
+        width: 100%;
+        max-width: 100%;
+      } */
+
+  /* === Writing Pages === */
+
   /* Writing Pages Typography */
   .writing-content h1{
   font-size: 2rem;
   }
 
-.writing-content h2{
+  .writing-content h2{
   font-size: 1.5rem;
   }
 
