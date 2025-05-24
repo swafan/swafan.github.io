@@ -717,6 +717,25 @@ img {
     margin: 0 0.625rem;
   }
 
+  /* testing tighter vertical spacing */
+  .section-intro{
+    padding-bottom: 3rem;    
+  }
+
+  .intro-heading {
+  font-size: 4rem;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0 1rem;
+  }
+
+  .tagline {
+  font-size: 1rem;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0 1rem;
+  }
+
   /* Additional fixes for aboutme */
   .aboutme-blurb {
     padding: 2rem 1rem;
@@ -733,6 +752,7 @@ img {
     background-attachment: scroll;
     background-position: 50% 25%;
   }
+
 }
 
 @media (hover: hover) {
