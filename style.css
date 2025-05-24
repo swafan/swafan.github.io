@@ -783,9 +783,16 @@ form button:hover {
   .project-overlay{
     background-color: var(--beige);
     color: var(--black);
-    padding: 0.25rem, 0.5rem;
+    padding: 0rem, 1rem;
     text-align: left;
     box-shadow: 0 -2px 12px rgba(0,0,0,0.2);
+    /* testing */
+    height: auto;
+  }
+
+  /* testing */
+  .project-overlay h3{
+    margin-top: 0;
   }
 
   .project-entry h3 {
