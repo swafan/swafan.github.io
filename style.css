@@ -68,7 +68,7 @@ h3 {
 
 /* ======= SECTION STYLES ======= */
 .section-intro {
-padding-bottom: 6rem;
+  padding-bottom: 6rem;
   text-align: center;
 }
 
@@ -752,6 +752,80 @@ img {
     background-attachment: scroll;
     background-position: 50% 25%;
   }
+
+  .resume-download{
+    margin-top: 0;
+  }
+
+  /* Projects */
+  @media (max-width: 48rem) {
+  .project-entry.with-bg {
+    background-image: none !important;
+    background-color: #333; /* Fallback color, or customize per project */
+    padding: 0;
+  }
+
+  .project-entry.with-bg::before {
+    content: "";
+    display: block;
+    background-image: url('Barter-Demo-Mobile.png');
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    width: 100%;
+  }
+
+  .project-overlay {
+    position: relative;
+    /* background-color: #1e1e1e; matching palette or use from image */
+    color: #e6dbc8;
+    padding: 1.25rem;
+    text-align: left;
+    box-shadow: 0 -2px 12px rgba(0,0,0,0.2);
+  }
+
+  .project-entry h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .project-entry p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0.4rem 0;
+  }
+
+    .project-grid {
+    display: block;
+    padding: 1rem 0;
+  }
+
+  .project-text, .project-media {
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .project-media figure {
+    margin-bottom: 1.5rem;
+  }
+
+  .project-photo {
+    max-width: 100%;
+    float: none;
+    margin: 0 auto;
+  }
+
+  figcaption {
+    text-align: center;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+  }
+
+  .box-footer {
+    margin-top: 1rem;
+  }
+}
+
 
 }
 
