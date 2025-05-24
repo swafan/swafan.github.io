@@ -37,6 +37,7 @@ function toggleDetails(button) {
 
 // FOOTNOTES IN WRITING PIECES
 
+/* Default */
 function toggleFootnote(el) {
   const note = el.querySelector('.footnote-content');
   if (window.matchMedia('(hover: none)').matches) {
@@ -45,3 +46,18 @@ function toggleFootnote(el) {
   }
 }
 
+/* Mobile scroll to disappear */
+let lastScrollY = window.scrollY;
+window.addEventListener('scroll', () => {
+  const activeFootnotes = document.querySelectorAll('.footnote-content');
+
+  if (window.innerWidth < 768) {
+    if (Math.abs(window.scrollY - lastScrollY) > 10) {
+      activeFootnotes.forEach(fn => {
+        fn.style.display = 'none';
+      });
+    }
+  }
+  
+  lastScrollY = window.scrollY;
+});
