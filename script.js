@@ -51,13 +51,12 @@ let lastScrollY = window.scrollY;
 window.addEventListener('scroll', () => {
   const activeFootnotes = document.querySelectorAll('.footnote-content');
 
-  if (window.innerWidth < 768) {
-    if (Math.abs(window.scrollY - lastScrollY) > 10) {
-      activeFootnotes.forEach(fn => {
-        fn.style.display = 'none';
-      });
-    }
+  if (Math.abs(window.scrollY - lastScrollY) > 10) {
+    activeFootnotes.forEach(fn => {
+      fn.style.display = 'none';
+    });
   }
-  
+ 
   lastScrollY = window.scrollY;
+
 });
