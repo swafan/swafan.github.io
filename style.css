@@ -23,7 +23,6 @@ body {
 
 /* ======= TYPOGRAPHY ======= */
 h1, h2, h3 {
-  margin: 0;
   margin-bottom: 1rem;
   line-height: 1.2;
 }
@@ -705,7 +704,7 @@ img {
     font-size: 4rem;
   }
 
-  .section-intro,
+  /* .section-intro, */
   .section-aboutme,
   .section-writings,
   .section-projects,
@@ -758,21 +757,29 @@ img {
   }
 
   /* Projects */
-  @media (max-width: 48rem) {
   .project-entry.with-bg {
     background-image: none !important;
     background-color: #333; /* Fallback color, or customize per project */
     padding: 0;
+    /* testing */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* or space-between if using footer placement */
+
   }
 
   .project-entry.with-bg::before {
-    content: "";
     display: block;
-    background-image: url('Barter-Demo-Mobile.png');
     background-size: cover;
     background-position: center;
-    height: 200px;
-    width: 100%;
+    /* height: 200px;
+    width: 100%; */
+  }
+
+  .project-entry.with-bg.project-barter{
+        /* content: ""; */
+    background-image: url('Barter-Demo-Mobile.png');
+    display: block;
   }
 
   .project-overlay {
@@ -795,7 +802,7 @@ img {
     margin: 0.4rem 0;
   }
 
-    .project-grid {
+  .project-grid {
     display: block;
     padding: 1rem 0;
   }
@@ -824,8 +831,22 @@ img {
   .box-footer {
     margin-top: 1rem;
   }
-}
 
+  /* Writing Pages Typography */
+  .writing-content h1{
+  font-size: 2rem;
+  }
+
+.writing-content h2{
+  font-size: 1.5rem;
+  }
+
+  /* Buttons */
+  .button-nice {
+    font-weight: 500;
+    font-size: 0.75rem;
+    line-height: 1;
+  }
 
 }
 
