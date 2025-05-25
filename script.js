@@ -37,26 +37,26 @@ function toggleDetails(button) {
 
 // FOOTNOTES IN WRITING PIECES
 
-/* Default */
+/* Default footnotes PC */
 function toggleFootnote(el) {
-  const note = el.querySelector('.footnote-content');
-  if (window.matchMedia('(hover: none)').matches) {
-    // On mobile, toggle
-    note.style.display = (note.style.display === 'block') ? 'none' : 'block';
-  }
+  const footnote = el.querySelector('.footnote-content');
+  footnote.classList.toggle('show');
 }
 
-/* Mobile scroll to disappear */
-let lastScrollY = window.scrollY;
-window.addEventListener('scroll', () => {
-  const activeFootnotes = document.querySelectorAll('.footnote-content');
+/* Mobile scroll to hide footnotes */
+document.addEventListener('DOMContentLoaded', () => {
+  let lastScrollY = window.scrollY;
 
-  if (Math.abs(window.scrollY - lastScrollY) > 10) {
-    activeFootnotes.forEach(fn => {
-      fn.style.display = 'none';
-    });
-  }
- 
-  lastScrollY = window.scrollY;
+  window.addEventListener('scroll', () => {
+    // Only run on mobile
+    if (window.innerWidth > 768) return;
 
+    const activeFootnotes = document.querySelectorAll('.footnote-content.show');
+
+    if (activeFootnotes.length && Math.abs(window.scrollY - lastScrollY) > 5) {
+      activeFootnotes.forEach(fn => fn.classList.remove('show'));
+    }
+
+    lastScrollY = window.scrollY;
+  });
 });
