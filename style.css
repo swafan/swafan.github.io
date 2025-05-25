@@ -3,6 +3,8 @@
   --black: #333;
   --beige: #faebd7;
   --orange: #e67635;
+  --font-default: 'Inter', sans-serif;
+  --font-emphasis: "Caveat", cursive;
 }
 
 html{
@@ -14,7 +16,7 @@ html{
 
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-default);
   font-weight: 100;
   background-color: var(--beige);
   color: var(--black);
@@ -34,12 +36,12 @@ h1, h2, h3 {
 
 h1 {
   font-size: 6rem;
-  font-family: "Caveat", cursive;
+  font-family: var(--font-emphasis)
   font-weight: 800;
 }
 
 h2 {
-  font-family: "Caveat", cursive;
+  font-family: var(--font-emphasis);
   text-align: center;
   font-size: 4rem;
   font-weight: 200;
@@ -77,7 +79,7 @@ h3 {
 }
 
 .intro-heading {
-  font-family: "Caveat", cursive;
+  font-family: var(--font-emphasis);
   font-size: 6rem;
   font-weight: 800;
   margin-bottom: 0.5rem;
@@ -214,73 +216,48 @@ h3 {
 }
 
 /* ======= PROJECTS ======= */
-
-.project-image-mobile{
-  display: none;
-}
-
-/* Background image */
-.project-entry.with-bg {
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 23.5rem; /* keep this */
-  border-radius: 0.75rem;
-  display: flex;
-  align-items: center;
-  padding: 1.5rem;
-  overflow: hidden;
-  margin-top: 3rem;
-  margin-bottom: -1rem;
-  z-index: 1;
-}
-
-.project-entry.with-bg::before {
-  content: '';
-  position: relative;
-  inset: 0;
-  z-index: 1;
-}
-
-/* Content goes above background/overlay */
-.project-overlay {
-  position: relative;
-  z-index: 2;
-  max-width: 43.75rem;
+.project-entry {
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
-  top: 0;
-  left: 0;
-  padding-top: 1.5rem;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background-color: var(--beige);
+  color: var(--black);
+  font-family: var(--font-default);
+  margin-bottom: 2rem;
+}
+
+/* Shared image for both desktop and mobile */
+.project-image {
   width: 100%;
-  height: 100%;
-  font-family: 'Inter', sans-serif;
-  line-height: 2;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+/* Overlay content below image on mobile */
+.project-overlay {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
+/* Optional: Title styling */
 .project-overlay h3 {
-  font-family: "Caveat", cursive;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   margin-bottom: 0.5rem;
-  color: var(--black);
 }
 
 .project-overlay p {
-  margin: 0;
-  font-size: 0.95rem;
-  color: var(--black);
+  margin: 0.25rem 0;
+  line-height: 1.75;
 }
 
 .project-emphasis{
   font-weight: 700;
   font-style: italic;
-}
-
-.project-overlay footer {
-  margin: 1rem 0;
 }
 
 /* Expanded content below image */
@@ -295,6 +272,13 @@ h3 {
   border: 0.06rem solid #e6dbc8;
   z-index: 0;
   color: #e6dbc8;
+
+  margin-bottom: 0;
+  transition: margin-bottom 0.3s ease;
+}
+
+.project-details:not(.hidden) {
+  margin-bottom: 3rem; /* or whatever spacing feels right */
 }
 
 .project-text {
@@ -312,7 +296,7 @@ h3 {
   margin-bottom: 0.25rem;
   letter-spacing: 0.1rem;
   display: block;
-  font-family: "Caveat", cursive;
+  font-family: var(--font-emphasis);
 }
 
 .project-grid { /* only applicable for Barter */
@@ -456,7 +440,6 @@ form button:hover {
 }
 
 /* ======= LINKS & OTHERS ======= */
-
 .extlink{
   color: #e6dbc8;
   transition: color 0.3s ease, border-bottom 0.3s ease;
@@ -604,7 +587,7 @@ form button:hover {
   max-width: 50rem;
   margin: 0 auto;
   padding: 3rem 1.5rem;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-default);
   color: var(--black);
 }
 
@@ -613,7 +596,7 @@ form button:hover {
 }
 
 .writing-content h1{
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-default);
   font-weight: 700;
   font-size: 3rem;
   letter-spacing: 0.006rem;
@@ -621,7 +604,7 @@ form button:hover {
 }
 
 .writing-content h2{
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-default);
   font-size: 2.5rem;
   font-weight: 500;   
   text-decoration: italic;
@@ -671,8 +654,9 @@ form button:hover {
 /* === Footnotes === */
 .interactive-footnote {
   position: relative;
+  display: inline-block;
   cursor: help;
-  border-bottom: 1px dashed #666;
+  border-bottom: 1px dashed var(--black);
 }
 
 .interactive-footnote:hover {
@@ -697,9 +681,11 @@ form button:hover {
   transition: opacity 0.3s ease;
 }
 
+.footnote-content.show {
+  display: block;
+}
 
 /* =========== MOBILE =========== */
-
 /* === Hover works only on non-touch devices === */
 @media (max-width: 48rem) {
   .intro-heading {
@@ -764,14 +750,13 @@ form button:hover {
     display: block;
     width: 100%;
     height: auto;
+    z-axis: 100;
   }
 
   .project-entry.with-bg {
     background-image: none !important;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /* or space-between if using footer placement */
+    display: block;
   }
 
   .project-entry.with-bg::before {
@@ -780,17 +765,24 @@ form button:hover {
     background-position: center;
   }
 
+  .project-barter, .project-stock{
+    min-height: 25rem;
+  }
+
   .project-overlay{
     background-color: var(--beige);
     color: var(--black);
     padding: 0rem, 1rem;
     text-align: left;
     box-shadow: 0 -2px 12px rgba(0,0,0,0.2);
-    /* testing */
+    /*testing  */
+    /* height: auto; */
     height: auto;
+    display: flex;
+    flex-direction: column;
+    z-axis: 50;
   }
 
-  /* testing */
   .project-overlay h3{
     margin-top: 0;
   }
@@ -833,45 +825,6 @@ form button:hover {
     margin-top: 0.5rem;
   }
 
-  .box-footer {
-    margin-top: 1rem;
-  }
-
-  /* Only affecting Project Barter */
-  /* .project-entry.project-barter{
-    background-image: none;
-  } */
-
-  /* .project-entry.project-barter::before{
-    content: "";
-    display: block;
-    /* height: 200px; */
-    /* background-image: url('pexels-detpho-1804976.jpg'); placeholder photo to see how this works */
-    /* background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  } */
-
-      /* Optional: stack layout for expanded content */
-      /* .project-entry.project-barter + .project-details .project-grid {
-        display: block;
-      }
-
-      .project-entry.project-barter + .project-details .project-media {
-        margin-top: 2rem;
-      }
-
-      .project-entry.project-barter + .project-details .project-media figure {
-        margin: 1rem auto;
-        width: 100%;
-        text-align: center;
-      }
-
-      .project-entry.project-barter + .project-details .project-media img {
-        width: 100%;
-        max-width: 100%;
-      } */
-
   /* === Writing Pages === */
 
   /* Writing Pages Typography */
@@ -891,12 +844,18 @@ form button:hover {
   }
 
   /* Footnote */
+  .interactive-footnote {
+    display: inline;
+  }
+
   .footnote-content {
-    left: 50vw;
-    transform: translateX(-50%);
+    /* left: 50vw; */
+    /* transform: translateX(-50%); */
+    /* display: absolute; */
+    margin: auto;
     bottom: auto;
     top: 2.5rem;
-    position: fixed;
+    position: absolute;
     max-width: 85vw;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   }
@@ -908,3 +867,36 @@ form button:hover {
   }
 }
 
+/* =========== PC =========== */
+/* Make image background-only on desktop */
+@media (min-width: 768px) {
+  .project-entry {
+    position: relative;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 320px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .project-image-mobile {
+    display: none;
+  }
+
+  .project-barter {
+    background-image: url('Barter-Demo-PC.png');
+  }
+
+  .project-stock {
+    background-image: url('Stock-PC-RoyaltyFree.png');
+  }
+
+  .project-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+    padding: 1.5rem;
+  }
+}
