@@ -828,6 +828,12 @@ form button:hover {
   /* === Buttons === */
 
   /* Disable .button-dark:hover effect on mobile */
+  .button-nice {
+    font-weight: 500;
+    font-size: 0.75rem;
+    line-height: 1;
+  }
+
   .button-nice.button-dark:hover,
   .button-nice.button-dark:active {
     color: var(--black) !important;
@@ -837,7 +843,7 @@ form button:hover {
   .button-nice.button-dark:hover::before,
   .button-nice.button-dark:active::before {
     opacity: 0 !important;
-    background-color: transparent !important;
+    background-color: var(--beige) !important;
     transform: none !important;
   }
 
@@ -860,11 +866,6 @@ form button:hover {
   }
 
   /* Buttons */
-  .button-nice {
-    font-weight: 500;
-    font-size: 0.75rem;
-    line-height: 1;
-  }
 
   /* Footnote */
   .interactive-footnote {
