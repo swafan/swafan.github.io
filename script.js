@@ -1,3 +1,21 @@
+// MOBILE SCROLL TO REMOVE FOOTNOTES
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  let lastScrollY = window.scrollY;
+
+  window.addEventListener('scroll', () => {
+    // Only run on mobile
+    if (window.innerWidth > 768) return;
+    const activeFootnotes = document.querySelectorAll('.footnote-content.show');
+    if (activeFootnotes.length && Math.abs(window.scrollY - lastScrollY) > 5) {
+      activeFootnotes.forEach(fn => fn.classList.remove('show'));
+    }
+
+    lastScrollY = window.scrollY;
+  });
+});
+
 // SCROLLING TITLE CARD --> ABOUT ME TRANSITION
 
 const title = document.querySelector("#intro");
@@ -29,9 +47,11 @@ function toggleDetails(button) {
   if (details.classList.contains('hidden')) {
     details.classList.remove('hidden');
     button.textContent = "Hide the story";
+    button.classList.toggle('active');
   } else {
     details.classList.add('hidden');
     button.textContent = "Read the story";
+    button.classList.remove('active');
   }
 }
 
@@ -42,21 +62,3 @@ function toggleFootnote(el) {
   const footnote = el.querySelector('.footnote-content');
   footnote.classList.toggle('show');
 }
-
-/* Mobile scroll to hide footnotes */
-document.addEventListener('DOMContentLoaded', () => {
-  let lastScrollY = window.scrollY;
-
-  window.addEventListener('scroll', () => {
-    // Only run on mobile
-    if (window.innerWidth > 768) return;
-
-    const activeFootnotes = document.querySelectorAll('.footnote-content.show');
-
-    if (activeFootnotes.length && Math.abs(window.scrollY - lastScrollY) > 5) {
-      activeFootnotes.forEach(fn => fn.classList.remove('show'));
-    }
-
-    lastScrollY = window.scrollY;
-  });
-});
