@@ -826,16 +826,26 @@ form button:hover {
   }
 
   /* === Buttons === */
+
+  /* Disable .button-dark:hover effect on mobile */
+  .button-nice.button-dark:hover,
+  .button-nice.button-dark:active {
+    color: var(--black) !important;
+    border-color: var(--black) !important;
+    background-color: var(--beige) !important;
+  }
+  .button-nice.button-dark:hover::before,
+  .button-nice.button-dark:active::before {
+    opacity: 0 !important;
+    background-color: transparent !important;
+    transform: none !important;
+  }
+
   .button-nice.button-dark.active {
     border-color: var(--orange);
     color: var(--beige);
     background-color: var(--orange);
-  }
-
-  .button-nice.button-dark {
-    border-color: var(--black);
-    color: var(--black);
-    background-color: var(--beige);
+    transition: none !important;
   }
 
   /* === Writing Pages === */
